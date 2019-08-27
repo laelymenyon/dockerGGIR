@@ -17,8 +17,7 @@ docker push vvanhees/base-r-ggir:GGIR1.10.1
 
 ### To use the docker image ggir-default do:
 - Update the command below to specify data folder, this folder needs to contain accelerometer data files
-- The config.csv file can be produced with GGIR, an [example file
-(config.csv) is include in this repo.
+- The config.csv file can be produced with GGIR, an [example file](config.csv) is include in this repo.
 - The output folder needs to exist, and should not be equal to or a sub-directory of the data folder.
 - Add -d if you want to make it less verbose
 
