@@ -16,10 +16,10 @@ docker push vvanhees/base-r-ggir:GGIR1.10.1
 
 
 ### To use the docker image ggir-default do:
-- Update the command below to specify data folder, this folder needs to contain accelerometer data files
-- The config.csv file can be produced with GGIR, an [example file](ggir-default/config.csv) is include in this repo.
-- The output folder needs to exist, and should not be equal to or a sub-directory of the data folder.
-- Add -d if you want to make it less verbose
+- Update the command below to specify data folder, this folder needs to contain accelerometer data files.
+- The config.csv file can be produced with GGIR, an [example file](ggir-default/config.csv) is included in this repo.
+- The output folder needs to exist and should not be equal to or a sub-directory of the data folder.
+- Add -d if you want to make it less verbose.
 
 ```
 docker run -it --rm --name ggir-defaut \
@@ -29,4 +29,4 @@ docker run -it --rm --name ggir-defaut \
   vvanhees/ggir-default
 ```
 
-Acknowledgment: Code inspired by [blog post](https://www.r-bloggers.com/running-your-r-script-in-docker/) by Oliver Guggenbühl. I replaced the -v command with the --mount for mounting files and folders.
+Acknowledgment: Code inspired by [blog post](https://www.r-bloggers.com/running-your-r-script-in-docker/) by Oliver Guggenbühl. I replaced the -v command with the --mount for mounting files and folders as I read elsewhere that that is best practise nowadays.
