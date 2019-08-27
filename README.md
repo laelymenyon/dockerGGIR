@@ -5,8 +5,6 @@ In this repository I keep the code for building docker containers related to GGI
 - vvanhees/base-r-ggir:GGIR1.10-1, which has R base and GGIR
 - vvanhees/ggir-default, which uses the beforementioned image to facilitate application of GGIR to data
 
-The code related to these images are in the respective folders.
-
 Images were built and pushed to Dockerhub with following commands:
 
 ```
@@ -19,7 +17,8 @@ docker push vvanhees/base-r-ggir:GGIR1.10.1
 
 ### To use the docker image ggir-default do:
 - Update the command below to specify data folder, this folder needs to contain accelerometer data files
-- The config.csv file can be produced with GGIR, this repository includes an example file.
+- The config.csv file can be produced with GGIR, an [example file
+(config.csv) is include in this repo.
 - The output folder needs to exist, and should not be equal to or a sub-directory of the data folder.
 - Add -d if you want to make it less verbose
 
