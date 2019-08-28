@@ -19,7 +19,7 @@ docker push vvanhees/ggir-default
 
 The following instructions assume that you have Docker installed. For installation instructions, see [docs.docker](https://docs.docker.com/) -> Get Docker -> Docker Engine-Community for the open source community editions per operating system.
 - Update the command below to specify data folder, this folder needs to contain accelerometer data files.
-- The config.csv file can be produced with GGIR, an [example file](ggir-default/config.csv) is included in this repo.
+- The config.csv file can be produced with GGIR, an [example config.csv file](ggir-default/config.csv) is included in this repo. For more informaiton about how GGIR creates and uses config.csv files see the [package vignette](https://cran.r-project.org/web/packages/GGIR/vignettes/GGIR.html#configuration-file).
 - The output folder needs to exist and should not be equal to or a sub-directory of the data folder.
 - Add -d if you want to make it less verbose.
 
