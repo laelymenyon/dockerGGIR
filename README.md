@@ -8,10 +8,10 @@ In this repository I keep the code for building docker containers related to GGI
 Images were built and pushed to Dockerhub with following commands:
 
 ```
-docker build -t vvanhees/ggir-default .
 docker build -t vvanhees/base-r-ggir .
-docker push vvanhees/ggir-default
 docker push vvanhees/base-r-ggir:GGIR1.10.1
+docker build -t vvanhees/ggir-default .
+docker push vvanhees/ggir-default
 ```
 
 
