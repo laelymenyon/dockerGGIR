@@ -5,14 +5,37 @@ In this repository I keep the code for building docker containers related to GGI
 - vvanhees/base-r-ggir:GGIR1.10-1, which has R base and GGIR
 - vvanhees/ggir-default, which uses the beforementioned image to facilitate application of GGIR to data
 
-Images were built and pushed to Dockerhub with following commands:
+
+Optionally started by deleting old images from docker hub, and removing all local images with docker rmi.
+
+Build image with r-base and GGIR:
 
 ```
+docker build --no-cache --force-rm --tag vvanhees/base-r-ggir:latest base-r-ggir/.
+```
 
-docker build --tag vvanhees/base-r-ggir:GGIR2.1.0 base-r-ggir/.
-docker build --tag vvanhees/ggir-default:GGIR2.1.0 ggir-default/.
-docker push vvanhees/base-r-ggir:GGIR2.1.0
-docker push vvanhees/ggir-default:GGIR2.1.0
+Start interactive contained to check that GGIR is installed:
+
+```
+docker run -it vvanhees/base-r-ggir bash
+```
+
+If yes, push to Dockerhub:
+
+```
+docker push vvanhees/base-r-ggir:latest
+```
+
+Build with R script to run GGIR from the beforementioned image:
+
+```
+docker build --no-cache --force-rm --tag vvanhees/ggir-default ggir-default/.
+```
+
+Push to Dockerhub:
+
+```
+docker push vvanhees/ggir-default
 ```
 
 
@@ -24,8 +47,9 @@ The following instructions assume that you have Docker installed. For installati
 - The output folder needs to exist and should not be equal to or a sub-directory of the data folder.
 - Add -d if you want to make it less verbose.
 
+
 ```
-docker run -it --rm --name ggir-defaut \
+docker run -it --rm --name ggir-default \
 --mount type=bind,source="$(pwd)"/data,target=/data \
 --mount type=bind,source="$(pwd)"/config.csv,target=/config.csv \
 --mount type=bind,source="$(pwd)"/output,target=/output,bind-propagation=rslave \
